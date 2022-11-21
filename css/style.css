@@ -1,0 +1,184 @@
+/* RESET CSS*/
+
+*,/* 0 */
+*::after, /* 1 */
+*::before /* 1 */ {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*outline: 1px solid red;*/
+}
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* HEADER */
+
+.header { /* Застопить меню*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #fff;
+}
+
+.header,
+.menu,
+.logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;  
+}
+
+@keyframes drop {
+    20%, 60% {
+        transform: rotate(45deg);
+    } 
+    40%, 80% {
+        transform: rotate(55deg);
+        opacity: 1;
+    }   
+}
+
+.logo {
+    width: 20%;
+    align-items: center;
+    transform-origin: top left;
+    animation: drop 2s ease-in-out;
+}
+
+.logo__picture-wrap {
+ width: 50%;   
+}
+
+.logo__picture {
+    min-width: 50%;
+    max-width: 100%;
+}
+
+.menu-wrap {
+    width: 60%;
+}
+.menu__item {
+    position: relative;
+}
+
+.menu__link,
+.submenu__link {
+    white-space: nowrap; /* оттступ*/
+    display: block;
+    padding: 10px;
+    z-index: 10;
+    background: gainsboro;
+    transition: 3s all;
+}
+
+.menu__link:hover,
+.submenu__link:hover {
+    background: rgb(198, 187, 210);
+    transition: 3s all;
+}
+
+.menu__item:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+}
+
+.submenu__item {
+    position: relative;
+}
+
+.sub {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    z-index: 10;
+    transition: 3s all;
+    background: gainsboro;
+}
+
+.menu__link:hover,
+.sub__item:hover {
+    background: rgb(188, 188, 228);
+    transition: 3s all;
+}
+
+.sub__link {
+    position: relative;
+}
+
+.sub:hover .submen__link {
+    opacity: 1;   
+}
+
+
+.submen__link {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    padding: 2%;
+    opacity: 0;
+    border: 1px solid black;
+    background: gainsboro;
+}
+
+
+
+.sub a {
+    display: block;
+    padding: 10px;
+}
+.submenu__item:hover .sub {
+    opacity: 1;
+}
+
+/* SECTION */
+.section {
+    margin-top: 10%;
+}
+
+/* СЛОЖНЫЕ СЕЛЕКТОРЫ */
+
+[class$='title'] {  /* Груптровка стилей*/
+   text-align: center;
+   padding: 10px 2%;
+}
+
+p[class$='item'] {
+    padding: 1% 2%;
+    text-indent: 5%;
+}
+
+p::first-letter { /* буквица*/
+    font-weight: bolder; /* жирность*/
+    font-size: 2rem;
+    color: violet;
+}
+
+
+/* ПРИМЕР
+[class$='item'] {
+    color: rgb(183, 10, 10);
+}*/ 
