@@ -38,12 +38,24 @@ a {
 }
 
 .header,
-.menu,
 .logo {
     display: flex;
     justify-content: space-around;
     align-items: center;  
 }
+
+.ul {
+    font-size: 0;
+    /* Выставляем родителю значение в ноль */
+}  
+
+ul li {
+    display: inline-block;
+    width: 100px;
+    border: 1px solid black;
+    /* Возвращаем в нормальное состояние у потомков */
+    font-size: 1rem;
+   }
 
 @keyframes drop {
     20%, 60% {
@@ -157,6 +169,9 @@ a {
 /* SECTION */
 .section {
     margin-top: 10%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* СЛОЖНЫЕ СЕЛЕКТОРЫ */
