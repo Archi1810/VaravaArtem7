@@ -44,7 +44,7 @@ a {
     align-items: center;  
 }
 
-.ul {
+ul {
     font-size: 0;
     /* Выставляем родителю значение в ноль */
 }  
